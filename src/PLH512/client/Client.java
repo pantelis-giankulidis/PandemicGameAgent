@@ -74,13 +74,10 @@ public class Client
             	
             	boolean timeToTalk = false;
             	
-            	
             	int k=18; // Hyperparameter
             	double discount_factor=0.8;//hyperparameter
             	int m=8; // Hyperparameter
             	
-            	
-            	//MPOREI NA GINEI WHILE  TRUE ME BREAK GIA SINTHIKI??
                 while (currentBoard[0].getGameEnded() == false) 
                 { 	
                 	timeToTalk = ((currentBoard[0].getWhoIsTalking() == myPlayerID)  && !currentBoard[0].getTalkedForThisTurn(myPlayerID));
@@ -91,7 +88,6 @@ public class Client
                 	try {
 						TimeUnit.MILLISECONDS.sleep(15);
 					} catch (InterruptedException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
                 	
@@ -119,8 +115,6 @@ public class Client
                         	
                         	
                         	String myAction = "";
-                        	String mySuggestion = "";
-                        	
                         	int myActionCounter = 0;
                         	
                         	// Printing out my current hand
@@ -131,12 +125,6 @@ public class Client
                         	System.out.println("\nMy hand's color count...");
                         	for (int i = 0 ; i < 4 ; i++)
                         		System.out.println(myBoard.getColors(i) + " cards count: " + myColorCount[i]);
-                        	
-                        	// Printing out distance map from current city
-                        	//System.out.println("\nDistance map from " + myCurrentCity);
-                        	//printDistanceMap(distanceMap);
-                        	
-                        	// ADD YOUR CODE FROM HERE AND ON!! 
                         	
                         	boolean tryToCure = false;
                         	String colorToCure = null;
@@ -343,20 +331,11 @@ public class Client
                         		next.clear();
                     		}
                         	
-                        	
-                        	// UP TO HERE!! DON'T FORGET TO EDIT THE "msgToSend"
-                        	
-                        	// Message type 
-                        	// toTextShuttleFlight(0,Atlanta)+"#"+etc
                         	String msgToSend;
                         	if (myBoard.getWhoIsPlaying() == myPlayerID)
                         		msgToSend = myAction;
-                        		
-                        		//msgToSend = "AP,"+myPlayerID+"#AP,"+myPlayerID+"#AP,"+myPlayerID+"#C,"+myPlayerID+",This was my action#AP,"+myPlayerID+"#C,"+myPlayerID+",This should not be printed..";//"Action";
                             else 
-                        		msgToSend = myAction+",This was my recommendation"; //"Recommendation"
-                        	
-                        	// NO EDIT FROM HERE AND ON (EXEPT FUNCTIONS OUTSIDE OF MAIN() OF COURSE)
+                        		msgToSend = myAction + ",This was my recommendation"; //"Recommendation"
                         	
                         	// Writing to Server
                         	dos.flush();
@@ -385,9 +364,7 @@ public class Client
                     try { 
                         
                     	// Reading the current board
-                    	//System.out.println("READING!!!");
                     	currentBoard[0] = (Board)dis.readObject();
-                    	//System.out.println("READ!!!");
                     	
                     	for(int i=0;i<4;i++) {
                     		if(i==currentBoard[0].getWhoIsTalking()) {
