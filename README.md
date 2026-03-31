@@ -3,7 +3,7 @@ The implementation code of the agent participated in the internal competition fo
 in the Electrical And Computer Engineering Department at the Technical University of Crete.
 The report of the project is [here](https://drive.google.com/file/d/1RxTv3O6FRtJrbJhWC_zSzDeA3LnJLJBC/view?usp=share_link)
 
-### How to run
+## How to run
 To begin the pandemic game simulation on your local machine, you must first initialize the game server and then connect the four required players. The process involves running two separate Java programs: Server.java and Client.java.
 
 **Step 1: Launching the Game Server** \
@@ -43,7 +43,7 @@ In each of the four terminals, execute the following command to start a client i
 
 As each client successfully connects to the server, you should see confirmation messages in both the server's terminal and the individual client terminals. Once the fourth client joins, the game simulation will automatically begin.
 
-### What to watch
+## What to watch
 In every turn, the server collects the players actions, spreads the players suggestion to the other players and prints the state of the game. \
 For example
 ```
@@ -199,7 +199,7 @@ Heuristics for action calculated
 ```
 By the end of the simulation, you can see if the players managed to cooperate, erase the pandemic spread and win, or they failed and the pandemic won
 
-### The players strategy
+## The players strategy
 Each agent strategy implementation follows a reinforcement learning approach to find the
 best policy for the agent. It uses some heuristics about
 the game,an ’adaptive play’ part that tries to learn the
@@ -207,5 +207,5 @@ impact of an action when it is followed by a sequence of
 actions of the other agents and a belief network about
 the propabilities of other agent’s actions. A more detailed explanation of the strategy can be read in the [official report](https://drive.google.com/file/d/1RxTv3O6FRtJrbJhWC_zSzDeA3LnJLJBC/view?usp=share_link) of the implementation.
 
-### The results
+## The results
 The team managed to qualify to the quarterfinals in the class competition, where 23 teams participated. 
